@@ -4,15 +4,22 @@
 
 This project was built by a team of four. This README explains what it does, the tech stack, how a call flows through the system, and how MCP is used to ground the LLM in real data.
 
+## My role
+
+This was a team project. My part was:
+
+- **AI layer and MCP server (Python).** I worked on the agent harness around the LLM and the read-only MCP server, including the guardrails: the rules the agent must follow and the checks on its output.
+- **Testing and debugging.** I built a tester model to check the agent's behaviour, and I tested and debugged the agent and the API.
+
 ## Contents
 
+- [My role](#my-role)
 - [What Asha does](#what-asha-does)
 - [Tech stack](#tech-stack)
 - [Architecture](#architecture)
 - [The pipeline: one call from start to end](#the-pipeline-one-call-from-start-to-end)
 - [How MCP works in this project](#how-mcp-works-in-this-project)
 - [Guardrails](#guardrails)
-- [My role](#my-role)
 - [Run it locally](#run-it-locally)
 - [Honest limits](#honest-limits)
 - [Next steps](#next-steps)
@@ -191,13 +198,6 @@ Important rules live in code, because a prompt alone can be ignored by a model.
 | One owner per borrower | The backend: a borrower is claimed by one agent before anyone can call them |
 | Disputes and wrong numbers | Recorded and escalated to a person, never argued |
 | Webhook authenticity | Twilio's signature is checked on every webhook |
-
-## My role
-
-This was a team project. My part was:
-
-- **AI layer and MCP server (Python).** I worked on the agent harness around the LLM and the read-only MCP server, including the guardrails: the rules the agent must follow and the checks on its output.
-- **Testing and debugging.** I built a tester model to check the agent's behaviour, and I tested and debugged the agent and the API.
 
 ## Run it locally
 
